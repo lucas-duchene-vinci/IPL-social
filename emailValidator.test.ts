@@ -12,7 +12,7 @@ describe('emailValidator', () => {
         });
     });
 
-    describe('Domain name contain at least one "."', () => {
+    describe('Domain name doest not contain at least one "."', () => {
         it('Should return false upon receiving an unvalid email.', () => {
             
             const actual = EmailValidator.isValidEmail('lucas@outlookcom');
@@ -21,12 +21,20 @@ describe('emailValidator', () => {
         });
     });
 
-    describe('Domain does not contain space.', () => {
+    describe('Domain does contain space.', () => {
         it('should return false if there is space in the mail', () => {
-            
+
             const actual = EmailValidator.isValidEmail('luc as@outlook.com');
 
             expect(actual).toBe(false);
-        })
-    })
+        });
+    });
+
+    describe('Domain has not char before or after @ symbol.', () => {
+        it('should return false if no char is after or before @', () => {
+            const actual = EmailValidator.isValidEmail('@gmail.com');
+
+            expect(actual).toBe(false);
+        });
+    });
 });
