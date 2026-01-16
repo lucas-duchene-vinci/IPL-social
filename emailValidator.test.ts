@@ -20,4 +20,14 @@ describe('emailValidator', () => {
             expect(actual).toBe(false);
         });
     });
+
+    describe('Domain does not contain space.', () => {
+        it('should return false if there is space in the mail', () => {
+            let verify = EmailValidator;
+
+            const actual = EmailValidator.isValidEmail('luc as@outlook.com');
+
+            expect(actual).toBe(false);
+        })
+    })
 });

@@ -8,6 +8,10 @@ export class EmailValidator {
       return false;
     }
 
+    if(email.includes(' ')) {
+      return false;
+    }
+    
     return true;
   }
 }
