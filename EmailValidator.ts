@@ -11,7 +11,7 @@ export class EmailValidator {
       return false;
     }
 
-    if(email.includes(' ')) {
+    if(this.hasSpace(email)) {
       return false;
     }
 
@@ -24,5 +24,9 @@ export class EmailValidator {
 
   private static containsAt(email: string): boolean {
     return email.includes("@");
+  }
+
+  private static hasSpace(email: string): boolean {
+    return email.includes(' ');
   }
 }
