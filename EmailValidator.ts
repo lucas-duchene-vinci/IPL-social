@@ -3,7 +3,7 @@ export class EmailValidator {
 
     const atIndex = email.indexOf('@');
     const domain = email.split('@')[1] ?? "";
-    if(!email.includes("@")) {
+    if(!this.containsAt(email)) {
       return false;
     }
 
@@ -20,5 +20,9 @@ export class EmailValidator {
     }
 
     return true;
+  }
+
+  private static containsAt(email: string): boolean {
+    return email.includes("@");
   }
 }
