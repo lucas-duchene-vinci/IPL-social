@@ -1,0 +1,24 @@
+{
+  "name": "ipl-social",
+  "version": "1.0.0",
+  "description": "Examen",
+  "homepage": "https://github.com/lucas-duchene-vinci/IPL-social#readme",
+  "bugs": {
+    "url": "https://github.com/lucas-duchene-vinci/IPL-social/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas-duchene-vinci/IPL-social.git"
+  },
+  "license": "ISC",
+  "author": "Lucas Duchène",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "jest": "^30.2.0"
+  }
+}
