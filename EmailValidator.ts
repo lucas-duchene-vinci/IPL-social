@@ -1,5 +1,9 @@
 export class EmailValidator {
     static isValid(email: string): boolean {
-    return email.includes("@");
+    if(!email.includes("@")) {
+      return false;
+    }
+
+    return true;
   }
 }

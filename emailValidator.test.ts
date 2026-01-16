@@ -2,7 +2,7 @@ import { EmailValidator } from "./EmailValidator"
 
 describe('emailValidator', () => {
     describe('Contain "@" ', () => {
-        it('Should return something.', () => {
+        it('Should return true upon receiving a valid email.', () => {
             let verify = EmailValidator;
 
             const actual = EmailValidator.isValid("lucas@outlook.com");
@@ -11,5 +11,5 @@ describe('emailValidator', () => {
         });
     });
 
-
+    
 });
