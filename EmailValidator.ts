@@ -1,7 +1,7 @@
 export class EmailValidator {
     static isValidEmail(email: string): boolean {
 
-    const atIndex = email.indexOf('@');
+    
     const domain = email.split('@')[1] ?? "";
     if(!this.containsAt(email)) {
       return false;
@@ -15,7 +15,7 @@ export class EmailValidator {
       return false;
     }
 
-    if(atIndex <= 0 || atIndex > email.length-1) {
+    if(this.hasCharBeforeOrAfterAt(email)) {
       return false;
     }
 
@@ -28,5 +28,10 @@ export class EmailValidator {
 
   private static hasSpace(email: string): boolean {
     return email.includes(' ');
+  }
+
+  private static hasCharBeforeOrAfterAt(email: string): boolean {
+    const atIndex = email.indexOf('@');
+    return atIndex <= 0 || atIndex > email.length-1;
   }
 }
