@@ -1,10 +1,13 @@
 export class EmailValidator {
     static isValidEmail(email: string): boolean {
+
+    const atIndex = email.indexOf('@');
+    const domain = email.split('@')[1] ?? "";
     if(!email.includes("@")) {
       return false;
     }
 
-    if(!email.includes(".")) {
+    if(!domain.includes('.') || domain.endsWith('.')) {
       return false;
     }
 
@@ -12,12 +15,10 @@ export class EmailValidator {
       return false;
     }
 
-    const atIndex = email.indexOf('@');
-
     if(atIndex <= 0 || atIndex > email.length-1) {
       return false;
     }
-    
+
     return true;
   }
 }
